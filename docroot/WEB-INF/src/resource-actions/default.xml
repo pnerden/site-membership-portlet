@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<resource-action-mapping>
+	<resource file="resource-actions/sitemembership.xml" />
+</resource-action-mapping>
