@@ -1,3 +1,4 @@
+<%@page import="com.liferay.portal.service.GroupLocalServiceUtil"%>
 <%
 /**
  * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
@@ -39,4 +40,6 @@ String currentURL = PortalUtil.getCurrentURL(request);
 long userId = PortalUtil.getUserId(request);
 pageContext.setAttribute("userId", userId);
 long groupId = themeDisplay.getScopeGroupIdOrLiveGroupId();
+boolean groupIsRegularSite = GroupLocalServiceUtil.getGroup(groupId).isRegularSite();
+pageContext.setAttribute("groupIsRegularSite", groupIsRegularSite);
 %>
