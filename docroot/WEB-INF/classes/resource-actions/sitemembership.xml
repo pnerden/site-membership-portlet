@@ -5,16 +5,20 @@
 		<permissions>
 			<supports>
 				<action-key>VIEW</action-key>
+				<action-key>CONFIGURATION</action-key>
+				<action-key>DELETE</action-key>
 			</supports>
-			<community-defaults>
-			</community-defaults>
 			<site-member-defaults>
 				<action-key>VIEW</action-key>
 			</site-member-defaults>
+			<user-defaults>
+				<action-key>VIEW</action-key>
+			</user-defaults>
 			<guest-defaults>
+				<action-key>VIEW</action-key>
 			</guest-defaults>
 			<guest-unsupported>
-				<action-key>VIEW</action-key>
+				<action-key>CONFIGURATION</action-key>
 			</guest-unsupported>
 		</permissions>
 	</portlet-resource>

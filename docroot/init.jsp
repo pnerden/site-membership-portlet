@@ -38,8 +38,10 @@
 <%
 String currentURL = PortalUtil.getCurrentURL(request);
 long userId = PortalUtil.getUserId(request);
-pageContext.setAttribute("userId", userId);
 long groupId = themeDisplay.getScopeGroupIdOrLiveGroupId();
-boolean groupIsRegularSite = GroupLocalServiceUtil.getGroup(groupId).isRegularSite();
-pageContext.setAttribute("groupIsRegularSite", groupIsRegularSite);
+boolean doDisplay = false;
+if ((PortalUtil.getUserId(request) > 0) && (GroupLocalServiceUtil.getGroup(groupId).isRegularSite())) {
+	doDisplay = true;
+}
+pageContext.setAttribute("doDisplay", doDisplay);
 %>

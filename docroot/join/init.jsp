@@ -1,7 +1,6 @@
 <%@ include file="/init.jsp" %>
 
-<c:if test="${userId > 0}">
-<c:if test="${groupIsRegularSite}">
+<c:if test="${doDisplay}">
 	<%
 		PortletURL joinOrLeaveURL = renderResponse.createActionURL();
 		joinOrLeaveURL.setWindowState(WindowState.MAXIMIZED);
@@ -22,5 +21,4 @@
 		int statusapproved = MembershipRequestConstants.STATUS_APPROVED;
 		pageContext.setAttribute("statusapproved", statusapproved);
 	%>
-</c:if>
 </c:if>

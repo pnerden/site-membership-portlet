@@ -1,7 +1,6 @@
 <%@ include file="/join/init.jsp" %>
 
-<c:if test="${userId > 0}">
-<c:if test="${groupIsRegularSite}">
+<c:if test="${doDisplay}">
 
 <div class="site-membership-portlet" id="join-or-leave-button">
 	<span>
@@ -31,5 +30,4 @@
 	});
 </script>
 
-</c:if>
 </c:if>
