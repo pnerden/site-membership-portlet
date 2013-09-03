@@ -40,7 +40,11 @@ String currentURL = PortalUtil.getCurrentURL(request);
 long userId = PortalUtil.getUserId(request);
 long groupId = themeDisplay.getScopeGroupIdOrLiveGroupId();
 boolean doDisplay = false;
-if ((PortalUtil.getUserId(request) > 0) && (GroupLocalServiceUtil.getGroup(groupId).isRegularSite())) {
+if (
+		(PortalUtil.getUserId(request) > 0)
+		&& (GroupLocalServiceUtil.getGroup(groupId).isRegularSite())
+		&& (Boolean.valueOf(GroupLocalServiceUtil.getGroup(groupId).getExpandoBridge().getAttribute("showJoinLeaveButton").toString()))
+		) {
 	doDisplay = true;
 }
 pageContext.setAttribute("doDisplay", doDisplay);
